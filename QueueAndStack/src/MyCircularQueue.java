@@ -4,7 +4,18 @@
  */
 
 public class MyCircularQueue {
-    public static void main(String[] args) {
 
+    private int[] data;
+    private int head;
+    private int tail;
+    private int size;
+
+    public MyCircularQueue(int k) {
+        data = new int[k];
+        head = -1;
+        tail = -1;
+        size = k;
     }
+
+
 }
