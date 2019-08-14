@@ -6,7 +6,7 @@ package BFS;
  */
 
 public class BFS_Island {
-    public int numIslands(char[][] point) {
+    public static int numIslands(char[][] point) {
         if (point == null || point.length == 0 || point[0].length == 0) {
             return 0;
         }
@@ -45,5 +45,29 @@ public class BFS_Island {
         if (y > 0 && point[x][y - 1] == '1') {
             search(point, x, y - 1);
         }
+    }
+
+    public static void main(String[] args){
+        char[][] point = new char[10][20];
+        int num = 0;
+        for(int i = 0; i < point.length; i ++){
+            for(int j = 0; j < point[0].length; j ++){
+                num = (int)(Math.random()*100);;
+                if(num >= 80){
+                    point[i][j] = '1';
+                }else{
+                    point[i][j] = '0';
+                }
+            }
+        }
+        System.out.println("---------------------------");
+        for(int i = 0; i < point.length; i ++){
+            for(int j = 0; j < point[0].length; j ++){
+                System.out.print(point[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("----------------------------");
+        System.out.println("岛屿数：" + numIslands(point));
     }
 }
