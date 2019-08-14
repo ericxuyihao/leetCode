@@ -1,9 +1,11 @@
+package BFS;
+
 /**
  * @author xuyihao
  * @date 2019/08/14
  */
 
-public class BFS {
+public class BFS_Island {
     public int numIslands(char[][] point) {
         if (point == null || point.length == 0 || point[0].length == 0) {
             return 0;
@@ -13,7 +15,7 @@ public class BFS {
         int count = 0;
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < column; j++) {
-                if (point[i][j] == 1) {
+                if (point[i][j] == '1') {
                     count++;
                     search(point, i, j);
                 }
